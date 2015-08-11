@@ -699,8 +699,9 @@ def sparse_block_dot_SS(W, h, inputIdx, b, outputIdx):
 
     Returns
     -------
-    (batch, oWin, oSize), dot(W[i, j], h[i]) + b[j]
-    but b[j] is only added once
+    object
+        (batch, oWin, oSize), dot(W[i, j], h[i]) + b[j]
+        but b[j] is only added once.
 
     Notes
     -----
