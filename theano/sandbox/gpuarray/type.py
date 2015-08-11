@@ -210,10 +210,12 @@ class GpuArrayType(Type):
         return (hash(self.typecode) ^ hash(self.broadcastable))
 
     def dtype_specs(self):
-        """Return a tuple (python type, c type, numpy typenum) that corresponds
+        """
+        Return a tuple (python type, c type, numpy typenum) that corresponds
         to self.dtype.
 
         This function is used internally as part of C code generation.
+
         """
         # TODO: add more type correspondances for e.g. int32, int64, float32,
         # complex64, etc.
@@ -379,7 +381,10 @@ GpuArrayType.SharedVariable = GpuArraySharedVariable
 def gpuarray_shared_constructor(value, name=None, strict=False,
                                 allow_downcast=None, borrow=False,
                                 broadcastable=None):
-    """SharedVariable constructor for GpuArrayType"""
+    """
+    SharedVariable constructor for GpuArrayType.
+
+    """
     if not isinstance(value, (numpy.ndarray, pygpu.gpuarray.GpuArray)):
         raise TypeError('ndarray or GpuArray required')
 
